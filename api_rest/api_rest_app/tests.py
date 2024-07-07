@@ -1,7 +1,6 @@
 from django.test import TestCase
 from .models import Book
 from datetime import date
-from django.urls import reverse
 from rest_framework.test import APIClient
 from django.contrib.auth.models import User
 
@@ -15,6 +14,7 @@ class BookListViewTest(TestCase):
     def test_view_url_exists_at_desired_location(self):
         resp = self.client.get('/api/books/')
         self.assertEqual(resp.status_code, 200)
+
 
 class BookModelTest(TestCase):
     def test_string_representation(self):
